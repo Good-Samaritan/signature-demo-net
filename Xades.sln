@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XadesDemo", "XadesDemo\XadesDemo.csproj", "{49E26F30-F505-439C-9E75-D7576A5CBBDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xades.UnitTests", "Xades.UnitTests\Xades.UnitTests.csproj", "{8B774D0B-7372-4C1B-BA7E-07605ACA034F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xades.IntegrationTests", "Xades.IntegrationTests\Xades.IntegrationTests.csproj", "{327A3743-DC1D-4396-8B7E-7ACC4DB77402}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xades", "Xades\Xades.csproj", "{AD2AE594-3CCA-489C-B2FF-FE757306ECCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Xades-master\Source\Library\Library.csproj", "{EE1DC57A-344A-4B0A-82CE-5FD328C14894}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2E1147CD-6319-4777-BB02-D7FBDEA38C21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5956DF34-7AA4-4E1F-A654-4FE8A40529FE}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.docx = Readme.docx
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandLine", "CommandLine\CommandLine.csproj", "{E1BD3C65-49C3-49E7-BABA-C60980CB3F20}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{154612DE-C842-4928-8B87-C338A620237C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{CD2751BC-1C50-43D0-8A2C-EF0C9208EB10}"
+	ProjectSection(SolutionItems) = preProject
+		examples\exportNsiItem get-state response error.csv = examples\exportNsiItem get-state response error.csv
+		examples\exportNsiItem get-state response.csv = examples\exportNsiItem get-state response.csv
+		examples\exportNsiItem request error.csv = examples\exportNsiItem request error.csv
+		examples\exportNsiItem request.csv = examples\exportNsiItem request.csv
+		examples\exportNsiItem response error.csv = examples\exportNsiItem response error.csv
+		examples\exportNsiItem response.csv = examples\exportNsiItem response.csv
+		examples\exportNsiList get-state response.csv = examples\exportNsiList get-state response.csv
+		examples\exportNsiList response.csv = examples\exportNsiList response.csv
+		examples\importInspectionPlan error response.csv = examples\importInspectionPlan error response.csv
+		examples\importInspectionPlan get-state response error.csv = examples\importInspectionPlan get-state response error.csv
+		examples\importInspectionPlan get-state response.csv = examples\importInspectionPlan get-state response.csv
+		examples\importInspectionPlan request.csv = examples\importInspectionPlan request.csv
+		examples\importInspectionPlan response.csv = examples\importInspectionPlan response.csv
+		examples\importMunicipalServices get-state response error.csv = examples\importMunicipalServices get-state response error.csv
+		examples\importMunicipalServices request.csv = examples\importMunicipalServices request.csv
+		examples\importMunicipalServices response error.csv = examples\importMunicipalServices response error.csv
+		examples\importMunicipalServices response error2.csv = examples\importMunicipalServices response error2.csv
+		examples\importMunicipalServices response.csv = examples\importMunicipalServices response.csv
+		examples\inspection-import-data.csv = examples\inspection-import-data.csv
+		examples\команды.txt = examples\команды.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49E26F30-F505-439C-9E75-D7576A5CBBDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E26F30-F505-439C-9E75-D7576A5CBBDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E26F30-F505-439C-9E75-D7576A5CBBDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E26F30-F505-439C-9E75-D7576A5CBBDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B774D0B-7372-4C1B-BA7E-07605ACA034F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B774D0B-7372-4C1B-BA7E-07605ACA034F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B774D0B-7372-4C1B-BA7E-07605ACA034F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B774D0B-7372-4C1B-BA7E-07605ACA034F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{327A3743-DC1D-4396-8B7E-7ACC4DB77402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{327A3743-DC1D-4396-8B7E-7ACC4DB77402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{327A3743-DC1D-4396-8B7E-7ACC4DB77402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{327A3743-DC1D-4396-8B7E-7ACC4DB77402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD2AE594-3CCA-489C-B2FF-FE757306ECCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD2AE594-3CCA-489C-B2FF-FE757306ECCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD2AE594-3CCA-489C-B2FF-FE757306ECCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD2AE594-3CCA-489C-B2FF-FE757306ECCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE1DC57A-344A-4B0A-82CE-5FD328C14894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE1DC57A-344A-4B0A-82CE-5FD328C14894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE1DC57A-344A-4B0A-82CE-5FD328C14894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE1DC57A-344A-4B0A-82CE-5FD328C14894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1BD3C65-49C3-49E7-BABA-C60980CB3F20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1BD3C65-49C3-49E7-BABA-C60980CB3F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1BD3C65-49C3-49E7-BABA-C60980CB3F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1BD3C65-49C3-49E7-BABA-C60980CB3F20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8B774D0B-7372-4C1B-BA7E-07605ACA034F} = {2E1147CD-6319-4777-BB02-D7FBDEA38C21}
+		{327A3743-DC1D-4396-8B7E-7ACC4DB77402} = {2E1147CD-6319-4777-BB02-D7FBDEA38C21}
+		{EE1DC57A-344A-4B0A-82CE-5FD328C14894} = {154612DE-C842-4928-8B87-C338A620237C}
+		{E1BD3C65-49C3-49E7-BABA-C60980CB3F20} = {154612DE-C842-4928-8B87-C338A620237C}
+		{CD2751BC-1C50-43D0-8A2C-EF0C9208EB10} = {5956DF34-7AA4-4E1F-A654-4FE8A40529FE}
+	EndGlobalSection
+EndGlobal

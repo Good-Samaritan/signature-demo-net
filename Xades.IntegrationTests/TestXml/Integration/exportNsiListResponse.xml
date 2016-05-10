@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:ns3="http://www.w3.org/2000/09/xmldsig#" xmlns:ns4="http://dom.gosuslugi.ru/schema/integration/8.7.0.3/" xmlns:ns5="http://dom.gosuslugi.ru/schema/integration/8.7.0.3/nsi-common/" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <ns4:ResultHeader>
+            <ns4:Date>2016-04-12T10:53:19.488+03:00</ns4:Date>
+            <ns4:MessageGUID>05bfa021-40db-4f61-bb71-0e2dda0c838b</ns4:MessageGUID>
+        </ns4:ResultHeader>
+    </soap:Header>
+    <soap:Body>
+        <ns5:getStateResult Id="signed-data-container"><ds:Signature Id="xmldsig-d591e416-aec7-4961-b70a-6f5ece1408d2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr34102001-gostr3411"/><ds:Reference URI="#signed-data-container"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr3411"/><ds:DigestValue>8dI9FSeU1Gu70UtUaX4+/hiYCMfw+FzsNESEsbJtm1c=</ds:DigestValue></ds:Reference><ds:Reference Type="http://uri.etsi.org/01903#SignedProperties" URI="#xmldsig-d591e416-aec7-4961-b70a-6f5ece1408d2-signedprops"><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr3411"/><ds:DigestValue>3hsrspqottUUca5dPOqYsQSjADon7WAONGIgi5M/pRo=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>nUFf/o2v1Cns74NR4Ftn1mdFqDCVeN1A6OnoogQcqYXBkuBDnJTkipA7dttlEkJh7rzaRvOrafMNbattY6T8ZQ==</ds:SignatureValue><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIDJjCCAtWgAwIBAgITEgAPldx4Rzy1qK2yugAAAA+V3DAIBgYqhQMCAgMwfzEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBjcnlwdG9wcm8ucnUxCzAJBgNVBAYTAlJVMQ8wDQYDVQQHEwZNb3Njb3cxFzAVBgNVBAoTDkNSWVBUTy1QUk8gTExDMSEwHwYDVQQDExhDUllQVE8tUFJPIFRlc3QgQ2VudGVyIDIwHhcNMTYwNDA4MTUwMjM0WhcNMTYwNzA4MTUxMjM0WjA1MRYwFAYDVQQDDA1TSUdOXzIwMTYwNDA4MQ4wDAYDVQQKDAVMQU5JVDELMAkGA1UEBhMCUlUwYzAcBgYqhQMCAhMwEgYHKoUDAgIkAAYHKoUDAgIeAQNDAARALZ3Ofpw2FChFbnSMTGtyJiXWmC08mYp0uM/zCkY0qoegHEJnjM1EDpAzKxqwIG5ZBv0WIUOMxu58jwGibOZoUqOCAXAwggFsMA4GA1UdDwEB/wQEAwIE8DATBgNVHSUEDDAKBggrBgEFBQcDAjAdBgNVHQ4EFgQUkHi7x8gC+22lDM2WRQlLyObsZrAwHwYDVR0jBBgwFoAUFTF8sI0a3mbXFZxJUpcXJLkBeoMwWQYDVR0fBFIwUDBOoEygSoZIaHR0cDovL3Rlc3RjYS5jcnlwdG9wcm8ucnUvQ2VydEVucm9sbC9DUllQVE8tUFJPJTIwVGVzdCUyMENlbnRlciUyMDIuY3JsMIGpBggrBgEFBQcBAQSBnDCBmTBhBggrBgEFBQcwAoZVaHR0cDovL3Rlc3RjYS5jcnlwdG9wcm8ucnUvQ2VydEVucm9sbC90ZXN0LWNhLTIwMTRfQ1JZUFRPLVBSTyUyMFRlc3QlMjBDZW50ZXIlMjAyLmNydDA0BggrBgEFBQcwAYYoaHR0cDovL3Rlc3RjYS5jcnlwdG9wcm8ucnUvb2NzcC9vY3NwLnNyZjAIBgYqhQMCAgMDQQCWCaY+GtlxHONPpBEDlTp3/ZWfDSjDrsb2GeAR4EF7ENKquggevHcgbPxd8wYTFl2N59L3fhEWk25l8nP1O3M7</ds:X509Certificate></ds:X509Data></ds:KeyInfo><ds:Object><xades:QualifyingProperties Target="#xmldsig-d591e416-aec7-4961-b70a-6f5ece1408d2" xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"><xades:SignedProperties Id="xmldsig-d591e416-aec7-4961-b70a-6f5ece1408d2-signedprops"><xades:SignedSignatureProperties><xades:SigningTime>2016-04-12T10:50:04.084+03:00</xades:SigningTime><xades:SigningCertificate><xades:Cert><xades:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#gostr3411"/><ds:DigestValue>xVlnHO/UsCPMapaQRroPok1o3cmrUyrJ6SBc6sEi78k=</ds:DigestValue></xades:CertDigest><xades:IssuerSerial><ds:X509IssuerName>cn=CRYPTO-PRO Test Center 2,o=CRYPTO-PRO LLC,l=Moscow,c=RU,1.2.840.113549.1.9.1=support@cryptopro.ru</ds:X509IssuerName><ds:X509SerialNumber>401418717008771244595411458054990910282765788</ds:X509SerialNumber></xades:IssuerSerial></xades:Cert></xades:SigningCertificate></xades:SignedSignatureProperties></xades:SignedProperties></xades:QualifyingProperties></ds:Object></ds:Signature>
+            <ns4:RequestState>3</ns4:RequestState>
+            <ns4:MessageGUID>a9cc0af1-05c5-4a3b-93d4-7a9107339bd4</ns4:MessageGUID>
+            <ns5:NsiList>
+                <ns4:Created>2016-04-12T10:53:19.065+03:00</ns4:Created>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>225</ns4:RegistryNumber>
+                    <ns4:Name>Вид административного наказания</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:40.403+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>34</ns4:RegistryNumber>
+                    <ns4:Name>Вид водозаборного сооружения</ns4:Name>
+                    <ns4:Modified>2016-03-29T22:24:39.135+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>234</ns4:RegistryNumber>
+                    <ns4:Name>Вид документа (готовность к сезонной эксплуатации)</ns4:Name>
+                    <ns4:Modified>2015-08-25T13:10:57.690+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>64</ns4:RegistryNumber>
+                    <ns4:Name>Вид документа по результатам проверки</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:47.312+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>79</ns4:RegistryNumber>
+                    <ns4:Name>Вид документа программы</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:39.199+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>235</ns4:RegistryNumber>
+                    <ns4:Name>Вид документа (соответствие требованиям энергоэффективности)</ns4:Name>
+                    <ns4:Modified>2015-08-25T13:10:57.699+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>50</ns4:RegistryNumber>
+                    <ns4:Name>Вид жилищной услуги</ns4:Name>
+                    <ns4:Modified>2015-02-06T22:23:44.885+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>231</ns4:RegistryNumber>
+                    <ns4:Name>Вид жилого помещения</ns4:Name>
+                    <ns4:Modified>2015-08-25T13:10:57.557+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>2</ns4:RegistryNumber>
+                    <ns4:Name>Вид коммунального ресурса</ns4:Name>
+                    <ns4:Modified>2015-02-06T22:23:44.885+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>3</ns4:RegistryNumber>
+                    <ns4:Name>Вид коммунальной услуги</ns4:Name>
+                    <ns4:Modified>2015-02-06T22:23:44.885+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>10</ns4:RegistryNumber>
+                    <ns4:Name>Вид лица</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:47.913+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>46</ns4:RegistryNumber>
+                    <ns4:Name>Вид мощности</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.744+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>33</ns4:RegistryNumber>
+                    <ns4:Name>Вид объекта коммунальной инфраструктуры</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.617+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>215</ns4:RegistryNumber>
+                    <ns4:Name>Вид операции по счету</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:39.675+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>76</ns4:RegistryNumber>
+                    <ns4:Name>Вид основания для включения дома</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:27.320+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>77</ns4:RegistryNumber>
+                    <ns4:Name>Вид основания для включения сведений в реестр дисквалифицированных лиц</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:27.334+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>74</ns4:RegistryNumber>
+                    <ns4:Name>Вид основания для выполнения размещения информации в реестре лицензий</ns4:Name>
+                    <ns4:Modified>2016-01-25T20:38:01.267+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>78</ns4:RegistryNumber>
+                    <ns4:Name>Вид основания для исключения сведений из реестра дисквалифицированных лиц</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:27.378+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>65</ns4:RegistryNumber>
+                    <ns4:Name>Вид осуществления контрольной деятельности</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:47.346+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>47</ns4:RegistryNumber>
+                    <ns4:Name>Вид потребителя коммунального ресурса</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.748+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>4</ns4:RegistryNumber>
+                    <ns4:Name>Вид прибора учета по количеству тарифов</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:44.883+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>66</ns4:RegistryNumber>
+                    <ns4:Name>Вид проверки</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:47.357+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>80</ns4:RegistryNumber>
+                    <ns4:Name>Вид программы</ns4:Name>
+                    <ns4:Modified>2016-01-25T20:38:01.479+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>226</ns4:RegistryNumber>
+                    <ns4:Name>Вид процессуальных документов</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:40.656+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>56</ns4:RegistryNumber>
+                    <ns4:Name>Вид работ</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:47.206+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>227</ns4:RegistryNumber>
+                    <ns4:Name>Вид результата по делу об административном правонарушении</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:40.362+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>85</ns4:RegistryNumber>
+                    <ns4:Name>Вид решения Фонда</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:37.056+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>42</ns4:RegistryNumber>
+                    <ns4:Name>Вид системы коммунальной инфраструктуры</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:39.908+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>8</ns4:RegistryNumber>
+                    <ns4:Name>Вид собственности</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.077+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>62</ns4:RegistryNumber>
+                    <ns4:Name>Вид счета/Способ формирования фонда</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:47.193+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>41</ns4:RegistryNumber>
+                    <ns4:Name>Вид теплоносителя</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.714+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>40</ns4:RegistryNumber>
+                    <ns4:Name>Вид топлива для бытовых нужд</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.699+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>90</ns4:RegistryNumber>
+                    <ns4:Name>Вид целевого показателя</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:37.852+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>38</ns4:RegistryNumber>
+                    <ns4:Name>Вид электростанции</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.674+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>44</ns4:RegistryNumber>
+                    <ns4:Name>Группа потребителей</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.732+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>218</ns4:RegistryNumber>
+                    <ns4:Name>Группа работ</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:39.753+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>95</ns4:RegistryNumber>
+                    <ns4:Name>Документ, удостоверяющий личность</ns4:Name>
+                    <ns4:Modified>2016-04-08T10:16:12.143+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>91</ns4:RegistryNumber>
+                    <ns4:Name>Доступный отчетный период</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:37.249+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>81</ns4:RegistryNumber>
+                    <ns4:Name>Задачи программы</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:36.819+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>83</ns4:RegistryNumber>
+                    <ns4:Name>Источник финансирования</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:39.317+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>11</ns4:RegistryNumber>
+                    <ns4:Name>Категория помещения</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:44.820+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>228</ns4:RegistryNumber>
+                    <ns4:Name>Категория процессуальных документов</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:40.328+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>13</ns4:RegistryNumber>
+                    <ns4:Name>Классификатор видов работ (услуг)</ns4:Name>
+                    <ns4:Modified>2015-11-26T14:14:17.009+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>12</ns4:RegistryNumber>
+                    <ns4:Name>Класс энергетической эффективности зданий</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:44.983+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>237</ns4:RegistryNumber>
+                    <ns4:Name>Код субъектов Российской Федерации (регионов)</ns4:Name>
+                    <ns4:Modified>2015-10-26T13:51:29.792+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>14</ns4:RegistryNumber>
+                    <ns4:Name>Количество комнат в помещении</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:44.836+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>15</ns4:RegistryNumber>
+                    <ns4:Name>Конструктивный элемент</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:44.852+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>16</ns4:RegistryNumber>
+                    <ns4:Name>Межповерочный интервал</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:44.867+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>17</ns4:RegistryNumber>
+                    <ns4:Name>Назначение помещения, относящегося к общему долевому имуществу собственников помещений</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:43.657+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>214</ns4:RegistryNumber>
+                    <ns4:Name>Направление отчетности</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:39.470+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>57</ns4:RegistryNumber>
+                    <ns4:Name>Объект аварии</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:47.131+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>18</ns4:RegistryNumber>
+                    <ns4:Name>Объект осмотра</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.014+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>58</ns4:RegistryNumber>
+                    <ns4:Name>Основание заключения договора</ns4:Name>
+                    <ns4:Modified>2015-12-10T17:41:05.854+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>68</ns4:RegistryNumber>
+                    <ns4:Name>Основание проведения проверки</ns4:Name>
+                    <ns4:Modified>2015-08-25T13:10:58.418+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>39</ns4:RegistryNumber>
+                    <ns4:Name>Основание эксплуатации объекта инфраструктуры</ns4:Name>
+                    <ns4:Modified>2015-08-25T13:10:57.392+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>92</ns4:RegistryNumber>
+                    <ns4:Name>Периодичность предоставления</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:38.276+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>276</ns4:RegistryNumber>
+                    <ns4:Name>Показатели качества коммунальных ресурсов</ns4:Name>
+                    <ns4:Modified>2016-04-05T09:55:29.982+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>19</ns4:RegistryNumber>
+                    <ns4:Name>Полномочие должностного лица организации</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:44.917+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>20</ns4:RegistryNumber>
+                    <ns4:Name>Полномочие организации</ns4:Name>
+                    <ns4:Modified>2016-04-05T09:55:29.430+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>222</ns4:RegistryNumber>
+                    <ns4:Name>Полномочия вышестоящих организаций для эскалации обращения</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:36.274+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>229</ns4:RegistryNumber>
+                    <ns4:Name>Предмет административного правонарушения</ns4:Name>
+                    <ns4:Modified>2016-02-26T11:35:54.319+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>69</ns4:RegistryNumber>
+                    <ns4:Name>Предмет проверки</ns4:Name>
+                    <ns4:Modified>2016-01-27T18:59:00.543+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>21</ns4:RegistryNumber>
+                    <ns4:Name>Причина архивации прибора учета</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:43.689+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>87</ns4:RegistryNumber>
+                    <ns4:Name>Причина возобновления финансовой поддержки за счет средств Фонда</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:37.184+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>22</ns4:RegistryNumber>
+                    <ns4:Name>Причина закрытия лицевого счета</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:47.714+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>48</ns4:RegistryNumber>
+                    <ns4:Name>Причина неактуальности дома</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.753+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>88</ns4:RegistryNumber>
+                    <ns4:Name>Причина отказа в возобновлении финансовой поддержки за счет средств Фонда</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:37.194+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>86</ns4:RegistryNumber>
+                    <ns4:Name>Причина принятия решения Фондом</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:37.140+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>54</ns4:RegistryNumber>
+                    <ns4:Name>Причина расторжения договора</ns4:Name>
+                    <ns4:Modified>2015-08-25T13:10:58.318+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>224</ns4:RegistryNumber>
+                    <ns4:Name>Причины выхода ПУ из строя</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:36.476+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>60</ns4:RegistryNumber>
+                    <ns4:Name>Расположение нежилого помещения</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:47.182+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>233</ns4:RegistryNumber>
+                    <ns4:Name>Результаты проверки готовности к отопительному периоду</ns4:Name>
+                    <ns4:Modified>2015-08-25T13:10:58.047+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>72</ns4:RegistryNumber>
+                    <ns4:Name>Рубрика документов</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:27.298+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>236</ns4:RegistryNumber>
+                    <ns4:Name>Связь вида коммунальной услуги, тарифицируемого ресурса и единиц измерения ставки тарифа</ns4:Name>
+                    <ns4:Modified>2016-04-05T09:55:29.782+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>24</ns4:RegistryNumber>
+                    <ns4:Name>Состояние дома</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:35.812+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>61</ns4:RegistryNumber>
+                    <ns4:Name>Состояние электронного документа</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:47.281+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>213</ns4:RegistryNumber>
+                    <ns4:Name>Способ принятия решений</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:39.599+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>241</ns4:RegistryNumber>
+                    <ns4:Name>Способ формирования фонда капитального ремонта</ns4:Name>
+                    <ns4:Modified>2015-11-26T13:09:58.387+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>196</ns4:RegistryNumber>
+                    <ns4:Name>Справочник иллюстраций</ns4:Name>
+                    <ns4:Modified>1970-02-01T10:53:19.339+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>67</ns4:RegistryNumber>
+                    <ns4:Name>Справочник обязательных работ, обеспечивающих надлежащее содержание МКД</ns4:Name>
+                    <ns4:Modified>2016-03-18T09:14:10.462+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>216</ns4:RegistryNumber>
+                    <ns4:Name>Справочник причин жалоб на сообщения на форуме</ns4:Name>
+                    <ns4:Modified>2015-08-25T13:10:58.010+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>70</ns4:RegistryNumber>
+                    <ns4:Name>Справочник типовых работ</ns4:Name>
+                    <ns4:Modified>2016-03-18T09:14:43.759+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>55</ns4:RegistryNumber>
+                    <ns4:Name>Статус утверждения</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:27.498+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>89</ns4:RegistryNumber>
+                    <ns4:Name>Сфера реализации программы</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:37.171+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>239</ns4:RegistryNumber>
+                    <ns4:Name>Тарифицируемый ресурс</ns4:Name>
+                    <ns4:Modified>2016-01-25T20:38:00.584+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>49</ns4:RegistryNumber>
+                    <ns4:Name>Тип внутренних стен</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.758+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>35</ns4:RegistryNumber>
+                    <ns4:Name>Тип газораспределительной сети</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.654+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>209</ns4:RegistryNumber>
+                    <ns4:Name>Тип документа</ns4:Name>
+                    <ns4:Modified>1970-02-01T10:53:19.366+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>26</ns4:RegistryNumber>
+                    <ns4:Name>Тип дома</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:44.998+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>73</ns4:RegistryNumber>
+                    <ns4:Name>Тип жилого помещения</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:27.307+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>53</ns4:RegistryNumber>
+                    <ns4:Name>Тип лица</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:34.282+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>230</ns4:RegistryNumber>
+                    <ns4:Name>Тип обращения</ns4:Name>
+                    <ns4:Modified>2015-12-07T18:30:29.653+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>52</ns4:RegistryNumber>
+                    <ns4:Name>Тип обременения</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:47.335+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>217</ns4:RegistryNumber>
+                    <ns4:Name>Тип операции по счету</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:39.557+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>84</ns4:RegistryNumber>
+                    <ns4:Name>Тип отчетов программы</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:37.349+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>93</ns4:RegistryNumber>
+                    <ns4:Name>Тип предоставления услуги</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:38.349+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>27</ns4:RegistryNumber>
+                    <ns4:Name>Тип прибора учета</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:44.901+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>28</ns4:RegistryNumber>
+                    <ns4:Name>Тип проекта здания</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:43.591+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>232</ns4:RegistryNumber>
+                    <ns4:Name>Тип работ по техническому обслуживанию и ремонту ОКИ</ns4:Name>
+                    <ns4:Modified>2015-11-26T12:52:07.391+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>63</ns4:RegistryNumber>
+                    <ns4:Name>Тип решения общего собрания собственников</ns4:Name>
+                    <ns4:Modified>2016-02-26T11:35:54.159+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>29</ns4:RegistryNumber>
+                    <ns4:Name>Тип учета электроэнергии</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:44.932+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>210</ns4:RegistryNumber>
+                    <ns4:Name>Типы документов перечня работ и услуг</ns4:Name>
+                    <ns4:Modified>2016-01-25T20:38:00.003+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>37</ns4:RegistryNumber>
+                    <ns4:Name>Тип электрической подстанции</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.665+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>75</ns4:RegistryNumber>
+                    <ns4:Name>Тип электронного документа реестра лицензий</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:35.623+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>36</ns4:RegistryNumber>
+                    <ns4:Name>Уровень давления газопровода</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.660+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>45</ns4:RegistryNumber>
+                    <ns4:Name>Уровень напряжения</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.737+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>94</ns4:RegistryNumber>
+                    <ns4:Name>Форма бухгалтерской отчетности</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:38.392+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>197</ns4:RegistryNumber>
+                    <ns4:Name>Форма описания объектов ЖФ</ns4:Name>
+                    <ns4:Modified>1970-02-01T10:53:19.416+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>71</ns4:RegistryNumber>
+                    <ns4:Name>Форма проведения проверки</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:47.324+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>30</ns4:RegistryNumber>
+                    <ns4:Name>Характеристика помещения</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:45.092+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>82</ns4:RegistryNumber>
+                    <ns4:Name>Цели программы</ns4:Name>
+                    <ns4:Modified>2015-07-07T14:28:36.899+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>31</ns4:RegistryNumber>
+                    <ns4:Name>Часовые зоны</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:47.076+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:NsiItemInfo>
+                    <ns4:RegistryNumber>32</ns4:RegistryNumber>
+                    <ns4:Name>Часовые зоны по Olson</ns4:Name>
+                    <ns4:Modified>2015-01-27T21:06:44.161+03:00</ns4:Modified>
+                </ns4:NsiItemInfo>
+                <ns4:ListGroup>NSI</ns4:ListGroup>
+            </ns5:NsiList>
+        </ns5:getStateResult>
+    </soap:Body>
+</soap:Envelope>

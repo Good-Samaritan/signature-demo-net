@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{327A3743-DC1D-4396-8B7E-7ACC4DB77402}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Xades.IntegrationTests</RootNamespace>
+    <AssemblyName>Xades.IntegrationTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.2.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.2.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IntegrationTest.cs" />
+    <Compile Include="NUnitTestHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xades\Xades.csproj">
+      <Project>{ad2ae594-3cca-489c-b2ff-fe757306ecca}</Project>
+      <Name>Xades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\Invalid\signature-not-found.xml" />
+    <EmbeddedResource Include="TestXml\Invalid\invalid-signature.xml" />
+    <EmbeddedResource Include="TestXml\Valid\sign.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\Valid\sing-certificate-is-not-installed.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\Invalid\certificate-not-match-by-digest-value.xml" />
+    <EmbeddedResource Include="TestXml\Invalid\certificate-not-match-by-issuer-name.xml" />
+    <EmbeddedResource Include="TestXml\Invalid\certificate-not-match-by-serial-number.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\Invalid\invalid-reference-to-signed-element.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\Invalid\invalid-reference-to-signature.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\Integration\exportNsiListResponse-expired.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\Integration\getstate.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\Invalid\xmldsig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\Invalid\signed-more-than-once.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\Invalid\not-signed.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\Invalid\hash-algorithm-not-supported.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\Invalid\commitment.xml" />
+    <EmbeddedResource Include="TestXml\Invalid\data-object-format.xml" />
+    <EmbeddedResource Include="TestXml\Invalid\signing-role.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\Invalid\signed-insde.xml" />
+    <EmbeddedResource Include="TestXml\Integration\exportNsiListResponse.xml" />
+    <Content Include="TestData\certificate.pfx" />
+    <Content Include="TestData\root-certificate.cer" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\NotSigned\not-signed-child.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TestXml\NotSigned\not-signed-root.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
