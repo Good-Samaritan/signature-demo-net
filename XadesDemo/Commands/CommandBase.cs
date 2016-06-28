@@ -23,7 +23,7 @@ namespace XadesDemo.Commands
             }
             catch (Exception ex)
             {
-                Error($"Ошибка выполнения команды: {ex.Message}", ex);
+                Error(string.Format("Ошибка выполнения команды: {0}", ex.Message), ex);
             }
         }
 
@@ -32,13 +32,24 @@ namespace XadesDemo.Commands
 
             if (ex != null && Option.Verbose)
             {
-                message += $"\n\rStackTrace:{ex.StackTrace}";
+                message += string.Format("\n\rStackTrace:{0}", ex.StackTrace);
             } 
             PrintMessage(message, ConsoleColor.Red);
         } 
-        protected void Info(string message) => PrintMessage(message, canWrite: Option.Verbose);
-        protected void Warning(string message) => PrintMessage(message, ConsoleColor.Yellow);
-        protected void Success(string message) => PrintMessage(message, ConsoleColor.Green);
+        protected void Info(string message)
+        {
+            PrintMessage(message, canWrite: Option.Verbose);
+        }
+
+        protected void Warning(string message)
+        {
+            PrintMessage(message, ConsoleColor.Yellow);
+        }
+
+        protected void Success(string message)
+        {
+            PrintMessage(message, ConsoleColor.Green);
+        }
 
         private static void PrintMessage(string message, ConsoleColor color = ConsoleColor.White, bool canWrite = true)
         {

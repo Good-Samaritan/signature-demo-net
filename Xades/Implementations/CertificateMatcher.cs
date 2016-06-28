@@ -12,15 +12,16 @@ namespace Xades.Implementations
 {
     public class CertificateMatcher : ICertificateMatcher
     {
-        public IIssuerComparer IssuerComparer { get; set; } = new IssuerComparer();
+        public IIssuerComparer IssuerComparer { get; set; } 
 
         public CertificateMatcher(ICryptoProvider cryptoProvider)
         {
             if (cryptoProvider == null)
             {
-                throw new ArgumentNullException(nameof(cryptoProvider));
+                throw new ArgumentNullException("cryptoProvider");
             }
             _cryptoProvider = cryptoProvider;
+            IssuerComparer= new IssuerComparer();
         }
 
         public X509Certificate2 GetSignatureCertificate(XadesSignedXml signedXml)
@@ -108,7 +109,7 @@ namespace Xades.Implementations
             var pkHash = _cryptoProvider.GetHashAlgorithm(certDigest.DigestMethod.Algorithm);
             if (pkHash == null)
             {
-                throw new XadesBesValidationException($"Алгоритм {certDigest.DigestMethod.Algorithm} не поддерживается");
+                throw new XadesBesValidationException(string.Format("Алгоритм {0} не поддерживается", certDigest.DigestMethod.Algorithm));
             }
             var hashValue = pkHash.ComputeHash(certificate.RawData);
             return ArrayHelper.AreEquals(hashValue, certDigest.DigestValue);

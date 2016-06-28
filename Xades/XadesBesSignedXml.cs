@@ -27,17 +27,17 @@ namespace Xades
             var signatureNodeList = FindSignatureNodes(elementToVerify);
             if (!signatureNodeList.Any())
             {
-                throw new InvalidOperationException($"Элемент с Id {elementId} не содержит подписи");
+                throw new InvalidOperationException(string.Format("Элемент с Id {0} не содержит подписи", elementId));
             }
             if (signatureNodeList.Length > 1)
             {
-                throw new InvalidOperationException($"Элемент с {elementId} подписан более одного раза");
+                throw new InvalidOperationException(string.Format("Элемент с {0} подписан более одного раза", elementId));
             }
             var signatureNode = (XmlElement) signatureNodeList[0];
             var standart = GetSignatureStandart(signatureNode);
             if (standart != KnownSignatureStandard.Xades)
             {
-                throw new InvalidOperationException($"Элемент с Id {elementId} подписан не по стандарту XADES-BES");
+                throw new InvalidOperationException(string.Format("Элемент с Id {0} подписан не по стандарту XADES-BES", elementId));
             }
             LoadXml(signatureNode);
         }
@@ -71,12 +71,12 @@ namespace Xades
         /// <param name="privateKeyPassword">Пароль от контейнера закрытого ключа используемого сертификата</param>
         public void ComputeSignature(X509Certificate2 certificate, string privateKeyPassword)
         {
-            var signatureId = $"xmldsig-{Guid.NewGuid().ToString().ToLower()}";
+            var signatureId = string.Format("xmldsig-{0}", Guid.NewGuid().ToString().ToLower());
 
             SigningKey = CryptoProvider.GetAsymmetricAlgorithm(certificate, privateKeyPassword);
 
             Signature.Id = signatureId;
-            SignatureValueId = $"{signatureId}-sigvalue";
+            SignatureValueId = string.Format("{0}-sigvalue", signatureId);
 
             var reference = CryptoProvider.GetReference(SignedElementId, signatureId);
             AddReference(reference);
@@ -105,7 +105,7 @@ namespace Xades
             var elementToVerify = GetIdElement(xmlDocument, elementId);
             if (elementToVerify == null)
             {
-                throw new InvalidOperationException($"Элемент с Id {elementId} не найден");
+                throw new InvalidOperationException(string.Format("Элемент с Id {0} не найден", elementId));
             }
             return elementToVerify;
         }
@@ -130,24 +130,33 @@ namespace Xades
             var signedSignatureProperties = SignedSignatureProperties;
             var signedDataObjectProperties = SignedDataObjectProperties;
 
-            //XAdES 1.4.2 clause G.2.2.6 Checking SignaturePolicyIdentifier
-            ThrowIfTrue(signedSignatureProperties?.SignaturePolicyIdentifier != null, "SignaturePolicyIdentifier");
+            if (signedSignatureProperties != null)
+            {
+                //XAdES 1.4.2 clause G.2.2.6 Checking SignaturePolicyIdentifier
+                ThrowIfTrue(signedSignatureProperties.SignaturePolicyIdentifier != null, "SignaturePolicyIdentifier");
 
-            //XAdES 1.4.2 clause G.2.2.8 Checking DataObjectFormat
-            ThrowIfTrue(signedDataObjectProperties?.DataObjectFormatCollection.IsNotEmpty(), "DataObjectFormat");
+                //XAdES 1.4.2 clause G.2.2.11 Checking SignerRole
+                var signerRole = signedSignatureProperties.SignerRole;
+                if (signerRole != null)
+                {
+                    ThrowIfTrue(signerRole.ClaimedRoles != null || signerRole.CertifiedRoles != null, "SignerRole");
+                }
+            }
+             
+            if (signedDataObjectProperties != null)
+            {
+                //XAdES 1.4.2 clause G.2.2.8 Checking DataObjectFormat
+                ThrowIfTrue(signedDataObjectProperties.DataObjectFormatCollection.IsNotEmpty(), "DataObjectFormat");
 
-            //XAdES 1.4.2 clause G.2.2.9 Checking CommitmentTypeIndication
-            ThrowIfTrue(signedDataObjectProperties?.CommitmentTypeIndicationCollection.IsNotEmpty(), "CommitmentTypeIndication");
+                //XAdES 1.4.2 clause G.2.2.9 Checking CommitmentTypeIndication
+                ThrowIfTrue(signedDataObjectProperties.CommitmentTypeIndicationCollection.IsNotEmpty(), "CommitmentTypeIndication");
 
-            //XAdES 1.4.2 clause G.2.2.11 Checking SignerRole
-            var signerRole = signedSignatureProperties?.SignerRole;
-            ThrowIfTrue(signerRole?.ClaimedRoles != null || signerRole?.CertifiedRoles != null, "SignerRole");
+                //XAdES 1.4.2 clause G.2.2.16.1.1 Checking AllDataObjectsTimeStamp
+                ThrowIfTrue(signedDataObjectProperties.AllDataObjectsTimeStampCollection.IsNotEmpty(), "AllDataObjectsTimeStamp");
 
-            //XAdES 1.4.2 clause G.2.2.16.1.1 Checking AllDataObjectsTimeStamp
-            ThrowIfTrue(signedDataObjectProperties?.AllDataObjectsTimeStampCollection.IsNotEmpty(), "AllDataObjectsTimeStamp");
-
-            //XAdES 1.4.2 clause G.2.2.16.1.2 Checking IndividualDataObjectsTimeStamp
-            ThrowIfTrue(signedDataObjectProperties?.IndividualDataObjectsTimeStampCollection.IsNotEmpty(), "IndividualDataObjectsTimeStamp");
+                //XAdES 1.4.2 clause G.2.2.16.1.2 Checking IndividualDataObjectsTimeStamp
+                ThrowIfTrue(signedDataObjectProperties.IndividualDataObjectsTimeStampCollection.IsNotEmpty(), "IndividualDataObjectsTimeStamp");
+            }
         }
 
         private static void ValidateCertificate(X509Certificate2 certificate)
@@ -167,7 +176,7 @@ namespace Xades
         {
             if (condition == true)
             {
-                throw new XadesBesValidationException($"Свойство xades:{tagName} не поддерживается");
+                throw new XadesBesValidationException(string.Format("Свойство xades:{0} не поддерживается", tagName));
             }
         }
 

@@ -87,7 +87,7 @@ namespace XadesDemo.Infrastructure
                 var node = bodyXml.SelectSingleNode(xpathToValuePair.Item1, manager);
                 if (node == null)
                 {
-                    throw new Exception($"Не найден элемент с путем: {xpathToValuePair.Item1}");
+                    throw new Exception(string.Format("Не найден элемент с путем: {0}",xpathToValuePair.Item1));
                 }
                 var value = ParseValue(xpathToValuePair.Item2);
                 node.InnerXml = value;
@@ -108,10 +108,17 @@ namespace XadesDemo.Infrastructure
 
         private static readonly Dictionary<string, Func<string>> ParseModifiers = new Dictionary<string, Func<string>>()
         {
-            ["{util:randomguid}"] = () => Guid.NewGuid().ToString("D")
+             {"{util:randomguid}", () => Guid.NewGuid().ToString("D") }
         };
 
-        private static string SchemeVersionPattern => "(?<scheme>http://dom.gosuslugi.ru/schema/integration/)\\d\\.\\d\\.\\d\\.\\d";
-        private string SchemeVersionReplacement => $"${{scheme}}{SchemaVersion}";
+        private static string SchemeVersionPattern
+        {
+            get { return "(?<scheme>http://dom.gosuslugi.ru/schema/integration/)\\d\\.\\d\\.\\d\\.\\d"; }
+        }
+
+        private string SchemeVersionReplacement
+        {
+            get { return string.Format("${{scheme}}{0}", SchemaVersion); }
+        } 
     }
 }

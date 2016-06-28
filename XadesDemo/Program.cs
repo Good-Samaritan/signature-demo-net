@@ -30,7 +30,11 @@ namespace XadesDemo
                         (GetStateOptions o) => new GetStateCommand(o, xadesService, xadesConfig, gisConfig),
                         (CertificateOptions o) => new CertificateCommand(o),
                         errors => (ICommand)null);
-                command?.Execute();
+                if (command != null)
+                {
+                    command.Execute();
+                }
+
             }
             catch(Exception ex)
             {

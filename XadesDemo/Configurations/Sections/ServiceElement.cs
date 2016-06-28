@@ -33,6 +33,9 @@ namespace XadesDemo.Configurations.Sections
         }
 
         [ConfigurationProperty("Methods")]
-        public MethodCollection Methods => (MethodCollection)base["Methods"];
+        public MethodCollection Methods
+        {
+            get { return (MethodCollection) base["Methods"]; }
+        } 
     }
 }

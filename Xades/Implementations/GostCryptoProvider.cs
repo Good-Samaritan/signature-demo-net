@@ -16,10 +16,15 @@ namespace Xades.Implementations
 {
     public class GostCryptoProvider : ICryptoProvider
     {
-        private Dictionary<string, string> HashAlgorithmMap { get; set; } = new Dictionary<string, string>
+        private Dictionary<string, string> HashAlgorithmMap { get; set; } 
+        
+        public GostCryptoProvider()
         {
-            ["http://www.w3.org/2001/04/xmldsig-more#gostr3411"] = "GOST3411"
-        };
+            HashAlgorithmMap = new Dictionary<string, string>
+            {
+                { "http://www.w3.org/2001/04/xmldsig-more#gostr3411", "GOST3411" }
+            };
+        }
 
         public HashAlgorithm GetHashAlgorithm(string algorithm)
         {
@@ -35,8 +40,21 @@ namespace Xades.Implementations
 
         private int _referenceIndex;
 
-        public string SignatureMethod => CPSignedXml.XmlDsigGost3410UrlObsolete;
-        public string DigestMethod => CPSignedXml.XmlDsigGost3411UrlObsolete;
+        public string SignatureMethod
+        {
+            get
+            {
+                return CPSignedXml.XmlDsigGost3410UrlObsolete;
+            }
+        } 
+
+        public string DigestMethod
+        {
+            get
+            {
+                return CPSignedXml.XmlDsigGost3411UrlObsolete;
+            }
+        }
 
         public AsymmetricAlgorithm GetAsymmetricAlgorithm(X509Certificate2 certificate, string privateKeyPassword)
         {
@@ -58,9 +76,9 @@ namespace Xades.Implementations
         {
             var reference = new Reference
             {
-                Uri = $"#{signedElementId}",
+                Uri = string.Format("#{0}",signedElementId),
                 DigestMethod = DigestMethod,
-                Id = $"{signatureId}-ref{_referenceIndex}"
+                Id = string.Format("{0}-ref{1}", signatureId, _referenceIndex)
             };
             reference.AddTransform(new XmlDsigEnvelopedSignatureTransform());
             reference.AddTransform(new XmlDsigExcC14NTransform());
@@ -89,8 +107,8 @@ namespace Xades.Implementations
             {
                 QualifyingProperties = new QualifyingProperties
                 {
-                    Target = $"#{signatureId}",
-                    SignedProperties = new SignedProperties { Id = $"{signatureId}-signedprops" }
+                    Target = string.Format("#{0}",signatureId),
+                    SignedProperties = new SignedProperties { Id = string.Format("{0}-signedprops", signatureId) }
                 }
             };
 
@@ -121,6 +139,9 @@ namespace Xades.Implementations
             return xadesObject;
         }
 
-        private static HashAlgorithm GetHashAlgorithm() => HashAlgorithm.Create("GOST3411");
+        private static HashAlgorithm GetHashAlgorithm()
+        {
+            return HashAlgorithm.Create("GOST3411");
+        }
     }
 }

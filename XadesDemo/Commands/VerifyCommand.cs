@@ -13,7 +13,7 @@ namespace XadesDemo.Commands
 
         protected override void OnExecute(VerifyOptions option)
         {
-            Info($"Выполняется чтение файла {option.InputFileName}...");
+            Info(string.Format("Выполняется чтение файла {0}...", option.InputFileName));
             var xmlDocument = XmlDocumentHelper.Load(option.InputFileName);
             var elementId = option.Element;
 

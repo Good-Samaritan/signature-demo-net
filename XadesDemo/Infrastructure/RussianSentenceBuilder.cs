@@ -48,32 +48,32 @@ namespace XadesDemo.Infrastructure
                     switch (error.Tag)
                     {
                         case ErrorType.BadFormatTokenError:
-                            return $"Ключ '{((BadFormatTokenError)error).Token}' не распознан";
+                            return string.Format("Ключ '{0}' не распознан", ((BadFormatTokenError)error).Token);
                         case ErrorType.MissingValueOptionError:
-                            return $"Для параметра '{((MissingValueOptionError)error).NameInfo.NameText}' не указано значение.";
+                            return string.Format("Для параметра '{0}' не указано значение.", ((MissingValueOptionError)error).NameInfo.NameText);
                         case ErrorType.UnknownOptionError:
-                            return $"Неизвестный параметр: '{((UnknownOptionError)error).Token}'";
+                            return string.Format("Неизвестный параметр: '{0}'", ((UnknownOptionError)error).Token);
                         case ErrorType.MissingRequiredOptionError:
                             var errMisssing = ((MissingRequiredOptionError)error);
                             return errMisssing.NameInfo.Equals(NameInfo.EmptyName)
                                     ? "Обязательное значение не найден"
-                                    : $"Обязательный параметр '{errMisssing.NameInfo.NameText}' не найден";
+                                    : string.Format("Обязательный параметр '{0}' не найден", errMisssing.NameInfo.NameText);
                         case ErrorType.BadFormatConversionError:
                             var badFormat = ((BadFormatConversionError)error);
                             return badFormat.NameInfo.Equals(NameInfo.EmptyName)
                                     ? "Неверное значение параметра"
-                                    : $"Параметр '{badFormat.NameInfo.NameText}' имеет неправильный формат";
+                                    : string.Format("Параметр '{0}' имеет неправильный формат", badFormat.NameInfo.NameText);
                         case ErrorType.SequenceOutOfRangeError:
                             var seqOutRange = ((SequenceOutOfRangeError)error);
                             return seqOutRange.NameInfo.Equals(NameInfo.EmptyName)
                                     ? "Неверное количество значений в последовательности"
-                                    : $"Последовательность параметров '{seqOutRange.NameInfo.NameText}' имеет неправильное количество значений";
+                                    : string.Format("Последовательность параметров '{0}' имеет неправильное количество значений", seqOutRange.NameInfo.NameText);
                         case ErrorType.BadVerbSelectedError:
-                            return $"Неизвестная команда: '{((BadVerbSelectedError)error).Token}'";
+                            return string.Format("Неизвестная команда: '{0}'", ((BadVerbSelectedError)error).Token);
                         case ErrorType.NoVerbSelectedError:
                             return "Команда не выбрана";
                         case ErrorType.RepeatedOptionError:
-                            return $"Параметр '{((RepeatedOptionError)error).NameInfo.NameText}' указан более одного раза ";
+                            return string.Format("Параметр '{0}' указан более одного раза ", ((RepeatedOptionError)error).NameInfo.NameText);
                     }
                     throw new InvalidOperationException();
                 };
@@ -95,7 +95,7 @@ namespace XadesDemo.Infrastructure
                             {
                                 var names = string.Join(
                                         string.Empty,
-                                        (from e in set.Errors select $"'{e.NameInfo.NameText}', ")).ToArray();
+                                        (from e in set.Errors select string.Format("'{0}', ", e.NameInfo.NameText))).ToArray();
                                 var namesCount = set.Errors.Count();
 
                                 var incompat = string.Join(
@@ -103,7 +103,7 @@ namespace XadesDemo.Infrastructure
                                         (from x in
                                                 (from s in bySet where !s.SetName.Equals(set.SetName) from e in s.Errors select e)
                                                 .Distinct()
-                                            select $"'{x.NameInfo.NameText}', ")).ToArray();
+                                         select string.Format("'{0}', ", x.NameInfo.NameText))).ToArray();
 
                                 return
                                         new StringBuilder("Параметр")

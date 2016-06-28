@@ -5,9 +5,9 @@ namespace Xades.Models
 {
     public class XadesInfo
     {
-        public byte[] RawCertData { get; }
-        public DateTime SigningDateTimeUtc { get; }
-        public int TimeZoneOffsetMinutes { get; }
+        public byte[] RawCertData { get; private set; }
+        public DateTime SigningDateTimeUtc { get; private set; }
+        public int TimeZoneOffsetMinutes { get; private set; }
 
         public XadesInfo(X509Certificate certificate)
         {

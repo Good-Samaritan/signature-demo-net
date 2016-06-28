@@ -13,14 +13,17 @@ namespace XadesDemo.Commands
         {
         }
 
-        protected override bool IsSignatureRequired => true;
+        protected override bool IsSignatureRequired
+        {
+            get { return true; }
+        }
 
         protected override void OnExecute(SendOptions option)
         {
             var valueDictionary = Enumerable.Empty<Tuple<string, string>>();
             if (!string.IsNullOrEmpty(option.ParametersFileName))
             {
-                Info($"Чтение данных из {option.ParametersFileName}...");
+                Info(string.Format("Чтение данных из {0}...", option.ParametersFileName));
                 valueDictionary = Helpers.CsvHelper.ReadCsv(option.ParametersFileName);
             }
 

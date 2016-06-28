@@ -15,7 +15,7 @@ namespace Xades.IntegrationTests
             var stream = thisAssembly.GetManifestResourceStream(fileResourcePath);
             if (stream == null)
             {
-                throw new FileNotFoundException($"Файл {filename} ({fileResourcePath}) не найден в ресурсах сборки {thisAssembly.FullName}");
+                throw new FileNotFoundException(string.Format("Файл {0} ({1}) не найден в ресурсах сборки {2}", filename, fileResourcePath, thisAssembly.FullName));
             }
             using (var reader = new StreamReader(stream))
             {

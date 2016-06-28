@@ -13,5 +13,8 @@ namespace XadesDemo.Configurations.Options
 
         [Option('o', "output", HelpText = "Файл для сохранения результатов выполнения запроса", Required = true)]
         public string OutputFileName { get; set; }
+
+        [Option('a', "auth", HelpText = "Логин:пароль для basic авторизации", Required = true)]
+        public override string BasicAuthorization { get; set; }
     }
 }

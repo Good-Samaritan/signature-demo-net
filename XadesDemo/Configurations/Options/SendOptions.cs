@@ -20,5 +20,8 @@ namespace XadesDemo.Configurations.Options
 
         [Option('p', "password", HelpText = "Пароль от выбраного сертификата")]
         public override string Password { get; set; }
+
+        [Option('a', "auth", HelpText = "Логин:пароль для basic авторизации", Required = true)]
+        public override string BasicAuthorization { get; set; }
     }
 }

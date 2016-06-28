@@ -1971,8 +1971,28 @@ namespace Microsoft.Xades
 		}
         #endregion
 
-        public SignedDataObjectProperties SignedDataObjectProperties => SignedProperties.SignedDataObjectProperties;
-        public SignedProperties SignedProperties => XadesObject.QualifyingProperties.SignedProperties;
-        public SignedSignatureProperties SignedSignatureProperties => SignedProperties.SignedSignatureProperties;
+	    public SignedDataObjectProperties SignedDataObjectProperties
+	    {
+	        get
+	        {
+	            return SignedProperties.SignedDataObjectProperties;
+	        }
+	    } 
+
+	    public SignedProperties SignedProperties
+	    {
+	        get
+	        {
+	            return XadesObject.QualifyingProperties.SignedProperties;
+	        }
+	    }
+
+	    public SignedSignatureProperties SignedSignatureProperties
+	    {
+	        get
+	        {
+	            return SignedProperties.SignedSignatureProperties;
+	        }
+	    }
     }
 }

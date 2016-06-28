@@ -19,7 +19,7 @@ namespace Xades.Helpers
             }
             catch (XmlException xmlEx)
             {
-                throw new InvalidOperationException($"Некорректный xml документ: {xmlEx.Message}", xmlEx);
+                throw new InvalidOperationException(string.Format("Некорректный xml документ: {0}", xmlEx.Message), xmlEx);
             }
             return xmlDocument;
         }
@@ -36,7 +36,7 @@ namespace Xades.Helpers
             }
             catch (XmlException xmlEx)
             {
-                throw new InvalidOperationException($"Некорректный xml документ: {xmlEx.Message}", xmlEx);
+                throw new InvalidOperationException(string.Format("Некорректный xml документ: {0}",xmlEx.Message), xmlEx);
             }
             return xmlDocument;
         }

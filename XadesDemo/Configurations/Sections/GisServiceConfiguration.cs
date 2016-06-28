@@ -5,7 +5,10 @@ namespace XadesDemo.Configurations.Sections
     public class GisServiceConfiguration : ConfigurationSection
     {
         [ConfigurationProperty("Services")]
-        public ServiceCollection Services => (ServiceCollection)(base["Services"]);
+        public ServiceCollection Services
+        {
+            get { return (ServiceCollection) (base["Services"]); }
+        } 
 
         [ConfigurationProperty("SenderId", IsRequired = true)]
         public string SenderId

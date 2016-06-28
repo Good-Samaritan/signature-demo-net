@@ -14,7 +14,7 @@ namespace XadesDemo.Commands
 
         protected override void OnExecute(SignOptions option)
         {
-            Info($"Выпоняется чтение файла {option.InputFileName}...");
+            Info(string.Format("Выпоняется чтение файла {0}...", option.InputFileName));
             var xmlDocument = XmlDocumentHelper.Load(option.InputFileName);
             var elementId = Option.Element;
 

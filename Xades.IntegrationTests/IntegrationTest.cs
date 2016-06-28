@@ -24,6 +24,7 @@ namespace Xades.IntegrationTests
             service.ValidateSignature(data, elementId);
         }
         
+        [Ignore("Сертификат устарел")]
         [TestCase(@"Invalid\invalid-signature.xml", DefaultSignedDataElementId, InvalidXmlSignatureError,
             TestName = "Неверная XML подпись")]
         [TestCase(@"Invalid\invalid-reference-to-signed-element.xml", DefaultSignedDataElementId, InvalidXmlSignatureError,
@@ -78,7 +79,7 @@ namespace Xades.IntegrationTests
 
         #region Sing Document Tests
 
-        private const string CertificateThumbprint = "4acec4802567bfd52f965eea5a11354eb6cf1dfb";
+        private const string CertificateThumbprint = "‎139136c6f90a972bb3eabe6368ca80043291da18";
         private const string CertificatePassword = "1";
 
         [TestCase(@"NotSigned\not-signed-root.xml", "some-id", TestName = "sign-root")]

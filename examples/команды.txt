@@ -1,31 +1,31 @@
 NsiCommonAsync: 
 
-xades-demo.exe send -s NsiCommonAsync -m exportNsiList -o "exportNsiList response.csv"
+xades-demo.exe send -s NsiCommonAsync -m exportNsiList -o "exportNsiList response.csv" -a lanit:tv,n8!Ya
 
-xades-demo.exe get-state -s NsiCommonAsync -g d61f93fb-a882-4b8e-b665-622b71599c07 -o "exportNsiList get-state response.csv"
+xades-demo.exe get-state -s NsiCommonAsync -g d61f93fb-a882-4b8e-b665-622b71599c07 -o "exportNsiList get-state response.csv" -a lanit:tv,n8!Ya
 
-xades-demo.exe send -s NsiCommonAsync -m exportNsiItem -o "exportNsiItem response.csv" -c "exportNsiItem request.csv"
+xades-demo.exe send -s NsiCommonAsync -m exportNsiItem -o "exportNsiItem response.csv" -c "exportNsiItem request.csv" -a lanit:tv,n8!Ya
 
-xades-demo.exe get-state -s NsiCommonAsync -g c3ef6c4b-acc2-46e7-82c8-11930de26467 -o "exportNsiItem get-state response.csv"
+xades-demo.exe get-state -s NsiCommonAsync -g c3ef6c4b-acc2-46e7-82c8-11930de26467 -o "exportNsiItem get-state response.csv" -a lanit:tv,n8!Ya
 
 NsiCommonAsync with error:
 
-xades-demo.exe send -s NsiCommonAsync -m exportNsiItem -o "exportNsiItem response error.csv" -c "exportNsiItem request error.csv"
+xades-demo.exe send -s NsiCommonAsync -m exportNsiItem -o "exportNsiItem response error.csv" -c "exportNsiItem request error.csv" -a lanit:tv,n8!Ya
 
-xades-demo.exe get-state -s NsiCommonAsync -g dcee9e40-1755-453a-9e0a-059d2c82cf69 -o "exportNsiItem get-state response error.csv"
+xades-demo.exe get-state -s NsiCommonAsync -g dcee9e40-1755-453a-9e0a-059d2c82cf69 -o "exportNsiItem get-state response error.csv" -a lanit:tv,n8!Ya
 
 NsiAsync with error:
 
-xades-demo.exe send -s NsiAsync -m importMunicipalServices -c "importMunicipalServices request.csv" -o "importMunicipalServices response.csv"
+xades-demo.exe send -s NsiAsync -m importMunicipalServices -c "importMunicipalServices request.csv" -o "importMunicipalServices response.csv" -a lanit:tv,n8!Ya
 
-xades-demo.exe get-state -s NsiAsync -g 8137cf4e-b5dc-4e37-8582-0db9323c1952 -o "importMunicipalServices get-state response error.csv"
+xades-demo.exe get-state -s NsiAsync -g 8137cf4e-b5dc-4e37-8582-0db9323c1952 -o "importMunicipalServices get-state response error.csv" -a lanit:tv,n8!Ya
 
 Inspection: 
 
-xades-demo.exe send -s Inspection -m importInspectionPlan -c "importInspectionPlan request.csv" -o "importInspectionPlan response.csv"
+xades-demo.exe send -s Inspection -m importInspectionPlan -c "importInspectionPlan request.csv" -o "importInspectionPlan response.csv" -a lanit:tv,n8!Ya
 
-xades-demo.exe get-state -s inspection -g 83b55c3d-4b25-43e1-94d9-583538386a11 -o "importInspectionPlan get-state response.csv"
+xades-demo.exe get-state -s inspection -g 83b55c3d-4b25-43e1-94d9-583538386a11 -o "importInspectionPlan get-state response.csv" -a lanit:tv,n8!Ya
 
 Inspection with error: 
 
-xades-demo.exe get-state -s inspection -g c32eee33-6ba7-4b94-a034-b5a41b76ba3d -o "importInspectionPlan get-state response error.csv"
+xades-demo.exe get-state -s inspection -g c32eee33-6ba7-4b94-a034-b5a41b76ba3d -o "importInspectionPlan get-state response error.csv" -a lanit:tv,n8!Ya

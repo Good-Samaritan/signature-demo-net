@@ -10,11 +10,11 @@ namespace Xades.Implementations
         {
             if (string.IsNullOrEmpty(xmlData))
             {
-                throw new ArgumentNullException(nameof(xmlData));
+                throw new ArgumentNullException("xmlData");
             }
             if (string.IsNullOrWhiteSpace(elementId))
             {
-                throw new ArgumentNullException(nameof(elementId));
+                throw new ArgumentNullException("elementId");
             }
 
             var document = XmlDocumentHelper.Create(xmlData);
@@ -29,15 +29,15 @@ namespace Xades.Implementations
         {
             if (string.IsNullOrEmpty(xmlData))
             {
-                throw new ArgumentNullException(nameof(xmlData));
+                throw new ArgumentNullException("xmlData");
             }
             if (string.IsNullOrEmpty(elementId))
             {
-                throw new ArgumentNullException(nameof(elementId));
+                throw new ArgumentNullException("elementId");
             }
             if (string.IsNullOrEmpty(certificateThumbprint))
             {
-                throw new ArgumentNullException(nameof(certificateThumbprint));
+                throw new ArgumentNullException("certificateThumbprint");
             }
 
             var originalDoc = XmlDocumentHelper.Create(xmlData);
@@ -52,7 +52,7 @@ namespace Xades.Implementations
             var element = xadesSignedXml.FindElement(elementId, originalDoc);
             if (element == null)
             {
-                throw new InvalidOperationException($"Не удалось найти узел c Id {elementId}");
+                throw new InvalidOperationException(string.Format("Не удалось найти узел c Id {0}", elementId));
             }
 
             xadesSignedXml.ComputeSignature(certificate, certificatePassword);

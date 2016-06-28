@@ -10,7 +10,7 @@ namespace XadesDemo.Helpers
 {
     public static class CsvHelper
     {
-        private static char[] Separators => new [] {';'};
+        private static char[] Separators = {';'};
         private const string Separator = ";";
 
         public static void WriteCsv(string outputFile, IEnumerable<Tuple<string, string>> valuesDictionary)

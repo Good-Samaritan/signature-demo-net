@@ -32,18 +32,18 @@ namespace XadesDemo.Commands
             var service = _serviceConfig.Services[serviceName];
             if (service == null)
             {
-                throw new ConfigurationErrorsException($"Конфигурация для сервиса {serviceName} не задана");
+                throw new ConfigurationErrorsException(string.Format("Конфигурация для сервиса {0} не задана", serviceName));
             }
 
             var method = service.Methods[methodName];
             if (method == null)
             {
-                throw new ConfigurationErrorsException($"Конфигурация для метода {methodName} не задана");
+                throw new ConfigurationErrorsException(string.Format("Конфигурация для метода {0} не задана",methodName));
             }
 
             if (method.RequiredBody && !xpath2Values.Any())
             {
-                throw new ConfigurationErrorsException($"Метод {methodName} имеет обязательные параметры для запроса (-с файл)");
+                throw new ConfigurationErrorsException(string.Format("Метод {0} имеет обязательные параметры для запроса (-с файл)", methodName));
             }
 
             Info("Создание запроса...");
@@ -69,19 +69,19 @@ namespace XadesDemo.Commands
             IEnumerable<Tuple<string, string>> resultValues;
             try
             {
-                Info($"Отправка запроса по адресу: {_serviceConfig.BaseUrl}{service.Path}/{method.Action}");
-                var response = CallGisService($"{_serviceConfig.BaseUrl}{service.Path}", method.Action, soapString);
+                Info(string.Format("Отправка запроса по адресу: {0}{1}/{2}", _serviceConfig.BaseUrl, service.Path, method.Action));
+                var response = CallGisService(_serviceConfig.BaseUrl + service.Path, method.Action, soapString, Option.BasicAuthorization);
                 Info("Обработка ответа на запрос...");
                 resultValues = ProcessSoapResponse(response);
             }
             catch (XadesBesValidationException ex)
             {
-                Error($"Подпись ответа от ГИС ЖКХ не прошла проверку: {ex.Message}", ex);
+                Error(string.Format("Подпись ответа от ГИС ЖКХ не прошла проверку: {0}", ex.Message), ex);
                 return;
             }
             catch (WebException ex)
             {
-                Warning($"Сервер ответил с ошибкой: {ex.Message}");
+                Warning(string.Format("Сервер ответил с ошибкой: {0}", ex.Message));
                 using (var streamWriter = new StreamReader(ex.Response.GetResponseStream()))
                 {
                     var response = streamWriter.ReadToEnd();
@@ -89,7 +89,7 @@ namespace XadesDemo.Commands
                 }
             }
 
-            Info($"Сохранение ответа в файл {outputFile}...");
+            Info(string.Format("Сохранение ответа в файл {0}...", outputFile));
             Helpers.CsvHelper.WriteCsv(outputFile, resultValues);
             Success("Запрос успешно выполнен");
         }
@@ -101,19 +101,19 @@ namespace XadesDemo.Commands
             var manager = soapXml.CreateNamespaceManager();
             var bodyResponse = soapXml.SelectSingleNode(Constants.SoapContentXpath, manager);
 
-            var idAttribute = bodyResponse.Attributes["Id"]?.Value;
+            var idAttribute = bodyResponse.Attributes["Id"];
 
-            if (!string.IsNullOrEmpty(idAttribute) && bodyResponse.ChildNodes.OfType<XmlNode>().Any(x => x.LocalName == Constants.SignatureName))
+            if (idAttribute != null && !string.IsNullOrEmpty(idAttribute.Value) && bodyResponse.ChildNodes.OfType<XmlNode>().Any(x => x.LocalName == Constants.SignatureName))
             {
                 Info("Проверка подписи ответа...");
-                Validate(soapXml, idAttribute);
+                Validate(soapXml, idAttribute.Value);
             }
             else
             {
                 Info("Ответ не содержит подписи");
             }
 
-            return FindXmlDataNode(bodyResponse, $"{bodyResponse.Name}/");
+            return FindXmlDataNode(bodyResponse, string.Format("{0}/", bodyResponse.Name));
         }
 
         private static IEnumerable<Tuple<string, string>> FindXmlDataNode(XmlNode node, string currentPath = "")
@@ -128,7 +128,7 @@ namespace XadesDemo.Commands
             //TODO: временное решение
             return childs.Count > 1 
                 ? ParseXmlDataNode(childs, currentPath)
-                : FindXmlDataNode(childs.First(), $"{currentPath}{childs.First().Name}/");
+                : FindXmlDataNode(childs.First(), string.Format("{0}{1}/", currentPath, childs.First().Name));
         }
 
         private static IEnumerable<Tuple<string, string>> ParseXmlDataNode(IEnumerable<XmlNode> nodeList, string currentPath)
@@ -144,7 +144,7 @@ namespace XadesDemo.Commands
                     var childs = node.ChildNodes
                         .OfType<XmlNode>()
                         .Where(x => (x.NodeType == XmlNodeType.Element || x.NodeType == XmlNodeType.Text) && x.LocalName != Constants.SignatureName);
-                    var data = ParseXmlDataNode(childs, $"{currentPath}{node.Name}/");
+                    var data = ParseXmlDataNode(childs, string.Format("{0}{1}/", currentPath, node.Name));
                     foreach (var item in data)
                     {
                         yield return item;
@@ -153,13 +153,16 @@ namespace XadesDemo.Commands
             }
         }
 
-        private static string CallGisService(string url, string action, string body)
+        private static string CallGisService(string url, string action, string body, string basicAuth)
         {
             var webRequest = (HttpWebRequest)WebRequest.Create(url);
             webRequest.Headers.Add("SOAPAction", action);
             webRequest.ContentType = "text/xml;charset=\"utf-8\"";
             webRequest.Accept = "text/xml";
             webRequest.Method = "POST";
+
+            var encodedAuth = Convert.ToBase64String(Encoding.GetEncoding("ISO-8859-1").GetBytes(basicAuth));
+            webRequest.Headers.Add("Authorization", string.Format("Basic {0}", encodedAuth));
 
             using (Stream stream = webRequest.GetRequestStream())
             {

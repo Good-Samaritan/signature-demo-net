@@ -13,7 +13,7 @@ namespace XadesDemo.Commands
         {
         }
 
-        protected override bool IsSignatureRequired => false;
+        protected override bool IsSignatureRequired { get { return false;}}
 
         protected override void OnExecute(GetStateOptions option)
         {

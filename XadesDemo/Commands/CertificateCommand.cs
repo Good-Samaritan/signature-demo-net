@@ -17,8 +17,8 @@ namespace XadesDemo.Commands
             Info("Информация о сертификатах");
             foreach (var cert in certificates)
             {
-                Info($"Субъект: {cert.Subject}");
-                Info($"Отпечаток: {cert.Thumbprint}");
+                Info(string.Format("Субъект: {0}", cert.Subject));
+                Info(string.Format("Отпечаток: {0}", cert.Thumbprint));
                 Console.WriteLine();
             }
         }

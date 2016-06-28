@@ -37,7 +37,7 @@ namespace Xades.Helpers
                     return activeCertificates[0];
                 }
 
-                throw new ArgumentException($"Сертификат с указанным отпечатком {thumbprint} недействителен");
+                throw new ArgumentException(string.Format("Сертификат с указанным отпечатком {0} недействителен", thumbprint));
             }
             finally
             {

@@ -13,7 +13,10 @@ namespace XadesDemo.Commands
         private readonly IXadesService _xadesService;
         private readonly SigningConfiguration _signingConfig;
 
-        private string Password => Option.Password ?? _signingConfig.CertificatePassword;
+        private string Password
+        {
+            get { return Option.Password ?? _signingConfig.CertificatePassword; }
+        } 
 
         protected XadesCommandBase(TOption option, IXadesService xadesService, SigningConfiguration signingConfig) : base(option)
         {
@@ -29,7 +32,7 @@ namespace XadesDemo.Commands
                 var rootNodeId = GetRootId(rootNode);
                 if (!string.IsNullOrEmpty(rootNodeId))
                 {
-                    Warning($"Не задан элемент для подписи. Используется корневой элемент {rootNode.Name} с Id {rootNodeId}");
+                    Warning(string.Format("Не задан элемент для подписи. Используется корневой элемент {0} с Id {1}", rootNode.Name, rootNodeId));
                     elementId = rootNodeId;
                 }
                 else
@@ -38,7 +41,7 @@ namespace XadesDemo.Commands
                     var attribulte = xml.CreateAttribute("Id");
                     attribulte.Value = elementId;
                     rootNode.Attributes.Append(attribulte);
-                    Warning($"Не задан элемент для подписи. Используется корневой элемент {rootNode.Name} с Id {elementId} (атрибут сгенерирован)");
+                    Warning(string.Format("Не задан элемент для подписи. Используется корневой элемент {0} с Id {1} (атрибут сгенерирован)",rootNode.Name, elementId));
                 }
             }
 
@@ -51,7 +54,7 @@ namespace XadesDemo.Commands
             var node = xml.SelectSingleNode(xpath, manager);
             if (node == null)
             {
-                throw new InvalidOperationException($"Не удалось найти узел{xpath}");
+                throw new InvalidOperationException(string.Format("Не удалось найти узел{0}", xpath));
             }
             var nodeId = node.Attributes["id"];
 
@@ -77,7 +80,7 @@ namespace XadesDemo.Commands
                 var rootNodeId = GetRootId(rootNode);
                 if (!string.IsNullOrEmpty(rootNodeId))
                 {
-                    Warning($"Не задан элемент для проверки подписи. Используется элемент {rootNode.Name} с Id {rootNodeId}");
+                    Warning(string.Format("Не задан элемент для проверки подписи. Используется элемент {0} с Id {1}", rootNode.Name, rootNodeId));
                     elementId = rootNodeId;
                 }
                 else
@@ -91,7 +94,7 @@ namespace XadesDemo.Commands
         private string GetRootId(XmlNode rootId)
         {
             var idName = _idAttributeNames.SingleOrDefault(x => rootId.Attributes[x] != null);
-            return !string.IsNullOrEmpty(idName) ? rootId.Attributes[idName]?.Value : null;
+            return !string.IsNullOrEmpty(idName) ? rootId.Attributes[idName].Value : null;
         }
 
         private readonly string[] _idAttributeNames = {  "Id", "id", "ID", "iD", "_Id", "_id", "_ID", "_iD" };
