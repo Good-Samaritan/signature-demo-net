@@ -56,6 +56,7 @@
     <Compile Include="Helpers\KeyInfoHelper.cs" />
     <Compile Include="Helpers\X509NameHelper.cs" />
     <Compile Include="Helpers\XadesSignedXmlHelper.cs" />
+    <Compile Include="Implementations\AdditionalXmlDsigC14NTransform.cs" />
     <Compile Include="Models\XadesInfo.cs" />
     <Compile Include="Helpers\ArrayHelper.cs" />
     <Compile Include="Helpers\CertificateHelper.cs" />

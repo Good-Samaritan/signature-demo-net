@@ -1,4 +1,4 @@
-using System.Configuration;
+﻿using System.Configuration;
 
 namespace XadesDemo.Configurations.Sections
 {
@@ -25,11 +25,11 @@ namespace XadesDemo.Configurations.Sections
             set { base["AddSignature"] = value; }
         }
 
-        [ConfigurationProperty("AddSenderId", IsRequired = true, IsKey = false)]
-        public bool AddSenderId
+        [ConfigurationProperty("AddOrgPpaGuid", IsRequired = true, IsKey = false)]
+        public bool AddOrgPpaGuid
         {
-            get { return ((bool)(base["AddSenderId"])); }
-            set { base["AddSenderId"] = value; }
+            get { return ((bool)(base["AddOrgPpaGuid"])); }
+            set { base["AddOrgPpaGuid"] = value; }
         }
 
         [ConfigurationProperty("Methods")]

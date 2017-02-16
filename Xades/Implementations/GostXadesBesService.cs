@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using Xades.Abstractions;
 using Xades.Helpers;
 
@@ -17,12 +17,16 @@ namespace Xades.Implementations
                 throw new ArgumentNullException("elementId");
             }
 
+            
             var document = XmlDocumentHelper.Create(xmlData);
             var signedXml = new XadesBesSignedXml(document, elementId)
             {
                 CertificateMatcher = new CertificateMatcher(new GostCryptoProvider())
             };
-            signedXml.Validate();
+            using (new AdditionalXmlDsigC14NTransformOperation(document))
+            {
+                signedXml.Validate();
+            }
         }
 
         public string Sign(string xmlData, string elementId, string certificateThumbprint, string certificatePassword)
@@ -52,7 +56,7 @@ namespace Xades.Implementations
             var element = xadesSignedXml.FindElement(elementId, originalDoc);
             if (element == null)
             {
-                throw new InvalidOperationException(string.Format("Не удалось найти узел c Id {0}", elementId));
+                throw new InvalidOperationException(string.Format("РќРµ СѓРґР°Р»РѕСЃСЊ РЅР°Р№С‚Рё СѓР·РµР» c Id {0}", elementId));
             }
 
             xadesSignedXml.ComputeSignature(certificate, certificatePassword);

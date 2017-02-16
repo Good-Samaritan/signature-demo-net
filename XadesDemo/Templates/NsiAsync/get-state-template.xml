@@ -1,3 +1,3 @@
-﻿<m:getStateRequest xmlns:m="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/">
+﻿<m:getStateRequest xmlns:m="http://dom.gosuslugi.ru/schema/integration/base/">
   <m:MessageGUID></m:MessageGUID>
 </m:getStateRequest>

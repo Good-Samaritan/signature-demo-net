@@ -1,4 +1,4 @@
-using System.Configuration;
+﻿using System.Configuration;
 
 namespace XadesDemo.Configurations.Sections
 {
@@ -10,18 +10,11 @@ namespace XadesDemo.Configurations.Sections
             get { return (ServiceCollection) (base["Services"]); }
         } 
 
-        [ConfigurationProperty("SenderId", IsRequired = true)]
-        public string SenderId
+        [ConfigurationProperty("OrgPpaGuid", IsRequired = true)]
+        public string OrgPpaGuid
         {
-            get { return (string)base["SenderId"]; }
-            set { base["SenderId"] = value; }
-        }
-
-        [ConfigurationProperty("SchemaVersion", IsRequired = true)]
-        public string SchemaVersion
-        {
-            get { return (string)base["SchemaVersion"]; }
-            set { base["SchemaVersion"] = value; }
+            get { return (string)base["OrgPpaGuid"]; }
+            set { base["OrgPpaGuid"] = value; }
         }
 
         [ConfigurationProperty("BaseUrl", IsRequired = true)]

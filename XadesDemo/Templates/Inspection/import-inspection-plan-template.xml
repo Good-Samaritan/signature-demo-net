@@ -1,38 +1,43 @@
-﻿<tns:importInspectionPlanRequest xmlns:base="http://dom.gosuslugi.ru/schema/integration/8.7.0.3/" xmlns:tns="http://dom.gosuslugi.ru/schema/integration/8.7.0.3/inspection/">
+﻿<tns:importInspectionPlanRequest base:version="10.0.1.1" 
+                                 xmlns:base="http://dom.gosuslugi.ru/schema/integration/base/" 
+                                 xmlns:tns="http://dom.gosuslugi.ru/schema/integration/inspection/" 
+                                 xmlns:nsi-base="http://dom.gosuslugi.ru/schema/integration/nsi-base/" 
+                                 xmlns:organizations-registry-base="http://dom.gosuslugi.ru/schema/integration/organizations-registry-base/">
   <tns:ImportInspectionPlan>
     <base:TransportGUID></base:TransportGUID>
     <tns:Sign></tns:Sign>
     <tns:InspectionPlan>
       <tns:Year></tns:Year>
-      <tns:ApprovalDate></tns:ApprovalDate>
-      <tns:AdditionalInfo></tns:AdditionalInfo>
+      <tns:ShouldNotBeRegistered></tns:ShouldNotBeRegistered>
     </tns:InspectionPlan>
     <tns:ImportPlannedExamination>
       <base:TransportGUID></base:TransportGUID>
-      <tns:Publish></tns:Publish>
       <tns:PlannedExamination>
-        <tns:NumberInPlan></tns:NumberInPlan>
+        <tns:PlannedExaminationOverview>
+          <tns:NumberInPlan></tns:NumberInPlan>
+        </tns:PlannedExaminationOverview>
         <tns:Subject>
           <tns:Organization>
-            <base:orgRootEntityGUID></base:orgRootEntityGUID>
+            <organizations-registry-base:orgRootEntityGUID></organizations-registry-base:orgRootEntityGUID>
             <tns:ActualActivityPlace></tns:ActualActivityPlace>
           </tns:Organization>
         </tns:Subject>
-        <tns:Objective></tns:Objective>
-        <tns:Base>
-          <base:Code></base:Code>
-          <base:GUID></base:GUID>
-          <base:Name></base:Name>
-        </tns:Base>
-        <tns:DateFrom></tns:DateFrom>
-        <tns:Duration>
-          <tns:WorkDays></tns:WorkDays>
-        </tns:Duration>
-        <tns:ExaminationForm>
-          <base:Code></base:Code>
-          <base:GUID></base:GUID>
-          <base:Name></base:Name>
-        </tns:ExaminationForm>
+        <tns:PlannedExaminationInfo>
+          <tns:Objective></tns:Objective>
+          <tns:Base>
+            <nsi-base:Code></nsi-base:Code>
+            <nsi-base:GUID></nsi-base:GUID>
+          </tns:Base>
+          <tns:MonthFrom></tns:MonthFrom>
+          <tns:YearFrom></tns:YearFrom>
+          <tns:Duration>
+            <tns:WorkHours></tns:WorkHours>
+          </tns:Duration>
+          <tns:ExaminationForm>
+            <nsi-base:Code></nsi-base:Code>
+            <nsi-base:GUID></nsi-base:GUID>
+          </tns:ExaminationForm>
+        </tns:PlannedExaminationInfo>
       </tns:PlannedExamination>
     </tns:ImportPlannedExamination>
   </tns:ImportInspectionPlan>

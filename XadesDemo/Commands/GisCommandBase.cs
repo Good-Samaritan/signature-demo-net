@@ -50,16 +50,15 @@ namespace XadesDemo.Commands
             var soapFormatter = new GisSoapFormatter
             {
                 Template = PathHelper.ToAppAbsolutePath(method.Template),
-                SchemaVersion = _serviceConfig.SchemaVersion,
-                AddSenderId = service.AddSenderId,
+                AddSenderId = service.AddOrgPpaGuid,
                 ValuesDictionary = xpath2Values,
-                SenderId = _serviceConfig.SenderId,
+                OrgPpaGuid = _serviceConfig.OrgPpaGuid,
                 Config = _serviceConfig.SoapConfiguration
             };
 
             var soapString = soapFormatter.GetSoapRequest();
 
-            if (IsSignatureRequired &&  service.AddSignature)
+            if (IsSignatureRequired && service.AddSignature)
             {
                 Info("Добавление подписи в запрос...");
                 var soapXml = XmlDocumentHelper.Create(soapString);

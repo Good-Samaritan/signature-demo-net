@@ -1,19 +1,20 @@
-﻿<m:importMunicipalServicesRequest xmlns:m="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/nsi/" xmlns:m1="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/">
+﻿<m:importMunicipalServicesRequest xmlns:m="http://dom.gosuslugi.ru/schema/integration/nsi/" xmlns:m1="http://dom.gosuslugi.ru/schema/integration/base/" xmlns:m2="http://dom.gosuslugi.ru/schema/integration/nsi-base/" m1:version="11.0.0.4">
   <m:ImportMainMunicipalService>
     <m1:TransportGUID></m1:TransportGUID>
     <m:ElementGuid></m:ElementGuid>
     <m:MunicipalServiceRef>
-      <m1:Code></m1:Code>
-      <m1:GUID></m1:GUID>
-      <m1:Name></m1:Name>
+      <m2:Code></m2:Code>
+      <m2:GUID></m2:GUID>
+      <m2:Name></m2:Name>
     </m:MunicipalServiceRef>
     <m:GeneralNeeds></m:GeneralNeeds>
     <m:MainMunicipalServiceName></m:MainMunicipalServiceName>
     <m:MunicipalResourceRef>
-      <m1:Code></m1:Code>
-      <m1:GUID></m1:GUID>
-      <m1:Name></m1:Name>
+      <m2:Code></m2:Code>
+      <m2:GUID></m2:GUID>
+      <m2:Name></m2:Name>
     </m:MunicipalResourceRef>
+    <m1:OKEI></m1:OKEI>
     <m:SortOrder></m:SortOrder>
   </m:ImportMainMunicipalService>
 </m:importMunicipalServicesRequest>

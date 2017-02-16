@@ -11,9 +11,8 @@ namespace XadesDemo.Infrastructure
     public class GisSoapFormatter
     {
 
-        public string SchemaVersion { get; set; }
         public string Template { get; set; }
-        public string SenderId { get; set; }
+        public string OrgPpaGuid { get; set; }
         public IEnumerable<Tuple<string, string>> ValuesDictionary { get; set; }
         public bool AddSenderId { get; set; }
         public SoapConfiguration Config { get; set; }
@@ -32,11 +31,11 @@ namespace XadesDemo.Infrastructure
             {
                 headerXml.Load(PathHelper.ToAppAbsolutePath(Config.RequestHeaderTemplatePath));
 
-                var senderIdNode = headerXml.CreateNode(XmlNodeType.Element, headerXml.DocumentElement.Prefix, "SenderID", headerXml.DocumentElement.NamespaceURI);
-                senderIdNode.InnerXml = SenderId;
+                var senderIdNode = headerXml.CreateNode(XmlNodeType.Element, headerXml.DocumentElement.Prefix, "orgPPAGUID", headerXml.DocumentElement.NamespaceURI);
+                senderIdNode.InnerXml = OrgPpaGuid;
                 headerXml.DocumentElement.AppendChild(senderIdNode);
 
-                var isOperatorSighnarure = headerXml.CreateNode(XmlNodeType.Element, headerXml.DocumentElement.Prefix, "IsOperatorSighnature", headerXml.DocumentElement.NamespaceURI);
+                var isOperatorSighnarure = headerXml.CreateNode(XmlNodeType.Element, headerXml.DocumentElement.Prefix, "IsOperatorSignature", headerXml.DocumentElement.NamespaceURI);
                 isOperatorSighnarure.InnerXml = "true";
                 headerXml.DocumentElement.AppendChild(isOperatorSighnarure);
             }
@@ -71,8 +70,7 @@ namespace XadesDemo.Infrastructure
             var importBodyNode = soapBody.OwnerDocument.ImportNode(body, true);
             soapBody.AppendChild(importBodyNode);
 
-            var soapText = soapXml.OuterXml;
-            return Regex.Replace(soapText, SchemeVersionPattern, SchemeVersionReplacement);
+            return soapXml.OuterXml;
         }
 
         private XmlNode GetXmlBody(string templatePath, IEnumerable<Tuple<string, string>> xpathToValues)
@@ -110,15 +108,5 @@ namespace XadesDemo.Infrastructure
         {
              {"{util:randomguid}", () => Guid.NewGuid().ToString("D") }
         };
-
-        private static string SchemeVersionPattern
-        {
-            get { return "(?<scheme>http://dom.gosuslugi.ru/schema/integration/)\\d\\.\\d\\.\\d\\.\\d"; }
-        }
-
-        private string SchemeVersionReplacement
-        {
-            get { return string.Format("${{scheme}}{0}", SchemaVersion); }
-        } 
     }
 }

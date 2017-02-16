@@ -1,5 +1,5 @@
-<m:exportNsiItemRequest xmlns:m="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/nsi-common/" xmlns:base="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/">
-  <m:RegistryNumber></m:RegistryNumber>
-  <base:ListGroup>NSI</base:ListGroup>
-  <m:ModifiedAfter></m:ModifiedAfter>
-</m:exportNsiItemRequest>
+<q1:exportNsiItemRequest base:version="10.0.1.2" xmlns:base="http://dom.gosuslugi.ru/schema/integration/base/" xmlns:q1="http://dom.gosuslugi.ru/schema/integration/nsi-common/" xmlns:nsibase="http://dom.gosuslugi.ru/schema/integration/nsi-base/">
+  <q1:RegistryNumber></q1:RegistryNumber>
+  <nsibase:ListGroup >NSI</nsibase:ListGroup>
+  <q1:ModifiedAfter></q1:ModifiedAfter>
+</q1:exportNsiItemRequest>

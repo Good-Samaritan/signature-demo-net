@@ -79,7 +79,7 @@ namespace Xades.IntegrationTests
 
         #region Sing Document Tests
 
-        private const string CertificateThumbprint = "‎139136c6f90a972bb3eabe6368ca80043291da18";
+        private const string CertificateThumbprint = "‎B34D5A65B277EE6249F8BF57EE65B7841533157D";
         private const string CertificatePassword = "1";
 
         [TestCase(@"NotSigned\not-signed-root.xml", "some-id", TestName = "sign-root")]

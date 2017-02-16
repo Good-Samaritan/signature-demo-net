@@ -1,3 +1,3 @@
-﻿<m:exportNsiListRequest xmlns:m="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/nsi-common/" xmlns:base="http://dom.gosuslugi.ru/schema/integration/8.6.0.6/">
-  <base:ListGroup>NSI</base:ListGroup>
-</m:exportNsiListRequest>
+﻿<q1:exportNsiListRequest base:version="10.0.1.2" xmlns:base="http://dom.gosuslugi.ru/schema/integration/base/" xmlns:q1="http://dom.gosuslugi.ru/schema/integration/nsi-common/" xmlns:nsibase="http://dom.gosuslugi.ru/schema/integration/nsi-base/">
+  <nsibase:ListGroup>NSI</nsibase:ListGroup>
+</q1:exportNsiListRequest>
